@@ -1,0 +1,19 @@
+#include <iostream>
+#include <string>
+#include <iomanip>
+
+using std::cin;
+using std::cout;
+using std::setprecision;
+
+int main()
+{
+    static float π = 3.141592653;
+    float R;
+    double Area;
+
+    cin >> R;
+    Area = π * R * R;
+    cout << setprecision(15) << Area;
+    return 0;
+}
