@@ -1,0 +1,18 @@
+#include <iostream>
+#include <cmath>
+#include <algorithm>
+
+using std::cin;
+using std::cout;
+using std::max;
+using std::min;
+
+int main()
+{
+    int A, B, C;
+    cin >> A >> B >> C;
+    int Max = max({A, B, C});
+    int Min = min({A, B, C});
+    cout << Min << " " << Max;
+    return 0;
+}
