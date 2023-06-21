@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cmath>
+
+using std::cin;
+using std::cout;
+
+int main()
+{
+    double A, B;
+    cin >> A >> B;
+    double X = A / B;
+    double Y = B / A;
+    if (X == floor(X) || Y == floor(Y))
+    {
+        cout << "Multiples";
+    }
+    else
+    {
+        cout << "No Multiples";
+    }
+    return 0;
+}
