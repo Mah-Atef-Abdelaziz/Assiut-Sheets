@@ -1,0 +1,21 @@
+#include <iostream>
+
+using std::cin;
+using std::cout;
+
+int main()
+{
+    float N;
+    cin >> N;
+    if (N == int(N))
+    {
+        cout << "int " << N;
+    }
+    else
+    {
+        int integer = int(N);
+        float decimal = N - int(N);
+        cout << "float " << integer << " " << decimal;
+    }
+    return 0;
+}
