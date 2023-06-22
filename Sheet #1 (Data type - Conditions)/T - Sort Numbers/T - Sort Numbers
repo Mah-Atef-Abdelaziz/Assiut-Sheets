@@ -1,0 +1,23 @@
+#include <iostream>
+#include <algorithm>
+
+using std::cin;
+using std::cout;
+using std::max;
+using std::min;
+
+int main()
+{
+    int A, B, C;
+    cin >> A >> B >> C;
+    int Min = min({A, B, C});
+    int Max = max({A, B, C});
+    int Mid = A + B + C - Max - Min;
+    cout << Min << "\n"
+         << Mid << "\n"
+         << Max << "\n\n"
+         << A << "\n"
+         << B << "\n"
+         << C;
+    return 0;
+}
