@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+#include <cctype>
+
+using std::cin;
+using std::cout;
+using std::isalpha;
+using std::isdigit;
+using std::islower;
+using std::isupper;
+
+int main()
+{
+    char X;
+    cin >> X;
+    if (isupper(X))
+    {
+        X = tolower(X);
+    }
+    else
+    {
+        X = toupper(X);
+    }
+    cout << X;
+    return 0;
+}
