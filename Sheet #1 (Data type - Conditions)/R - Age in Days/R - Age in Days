@@ -1,0 +1,18 @@
+#include <iostream>
+
+using std::cin;
+using std::cout;
+
+int main()
+{
+    int N;
+    cin >> N;
+    int years = N / 365;
+    int months = (N % 365) / 30;
+    int days = (N % 365) % 30;
+
+    cout << years << " years\n";
+    cout << months << " months\n";
+    cout << days << " days";
+    return 0;
+}
