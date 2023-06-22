@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string>
+#include <cctype>
+
+using std::cin;
+using std::cout;
+using std::isalpha;
+using std::isdigit;
+using std::islower;
+using std::isupper;
+
+int main()
+{
+    char X;
+    cin >> X;
+    if (isdigit(X))
+    {
+        cout << "IS DIGIT";
+    }
+    else if (isalpha(X))
+    {
+        cout << "ALPHA\n";
+        if (isupper(X))
+        {
+            cout << "IS CAPITAL";
+        }
+        else
+        {
+            cout << "IS SMALL";
+        }
+    }
+
+    return 0;
+}
