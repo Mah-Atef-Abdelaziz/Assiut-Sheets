@@ -1,0 +1,17 @@
+#include <iostream>
+#include <iomanip>
+
+using std::cin;
+using std::cout;
+using std::fixed;
+using std::setprecision;
+
+int main()
+{
+    float X, P;
+    cin >> X >> P;
+    X /= 100;
+    float OriginalPrice = P / (1 - X);
+    cout << setprecision(2) << fixed << OriginalPrice;
+    return 0;
+}
