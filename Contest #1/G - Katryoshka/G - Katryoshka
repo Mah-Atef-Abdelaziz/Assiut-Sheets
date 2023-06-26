@@ -1,0 +1,20 @@
+#include <iostream>
+#include <algorithm>
+
+using std::cin;
+using std::cout;
+using std::max;
+using std::min;
+
+int main()
+{
+    long long n, m, k;
+    cin >> n >> m >> k;
+    long long res = min({n, m, k});
+    n -= res;
+    m -= res;
+    k -= res;
+    res += min((n / 2), k);
+    cout << res;
+    return 0;
+}
