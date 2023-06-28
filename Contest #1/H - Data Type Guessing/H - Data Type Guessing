@@ -1,0 +1,26 @@
+#include <iostream>
+
+using std::cin;
+using std::cout;
+
+int main()
+{
+    double n, k, a;
+    cin >> n >> k >> a;
+    double d = n * (k / a);
+    long long ll = d;
+    double isD = d - ll;
+    if (isD > 0)
+    {
+        cout << "double";
+    }
+    else if (ll <= 2147483647)
+    {
+        cout << "int";
+    }
+    else
+    {
+        cout << "long long";
+    }
+    return 0;
+}
