@@ -1,0 +1,34 @@
+#include <iostream>
+
+using std::cin;
+using std::cout;
+
+int main()
+{
+    int N, X;
+    int Even, Odd, Positive, Negative;
+    Even = Odd = Positive = Negative = 0;
+    cin >> N;
+    for (int i = 0; i < N; i++)
+    {
+        cin >> X;
+        if (X % 2 == 0){
+            Even++;
+        }
+        else{
+            Odd++;
+        }
+        
+        if (X > 0){
+            Positive++;
+        }
+        else if (X < 0){
+            Negative++;
+        }
+    }
+    cout << "Even: " << Even << "\n"
+         << "Odd: " << Odd << "\n"
+         << "Positive: " << Positive << "\n"
+         << "Negative: " << Negative << "\n";
+    return 0;
+}
