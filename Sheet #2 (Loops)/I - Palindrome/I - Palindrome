@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+using std::cin;
+using std::cout;
+using std::reverse;
+using std::stoll;
+using std::string;
+using std::to_string;
+
+int main()
+{
+    long long N;
+    cin >> N;
+    string S = to_string(N);
+    string revS = S;
+    reverse(revS.begin(), revS.end());
+    long long rev = stoll(revS);
+    if (S == revS){
+        cout << S << "\nYES";
+    }
+    else{
+        cout << rev << "\nNO";
+    }
+
+    return 0;
+}
