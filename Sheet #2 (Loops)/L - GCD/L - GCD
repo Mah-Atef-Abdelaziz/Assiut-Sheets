@@ -1,0 +1,18 @@
+#include <iostream>
+
+using std::cin;
+using std::cout;
+using std::swap;
+
+int main()
+{
+    int A, B;
+    cin >> A >> B;
+    while (B != 0)
+    {
+        A %= B;
+        swap(A, B);
+    }
+    cout << A;
+    return 0;
+}
