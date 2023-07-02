@@ -1,0 +1,25 @@
+#include <iostream>
+
+using std::cin;
+using std::cout;
+using std::max;
+using std::min;
+
+int main()
+{
+    int N, M;
+    cin >> N >> M;
+    while (N > 0 && M > 0)
+    {
+        int sum = 0;
+        for (int i = min(N, M); i <= max(N, M); i++)
+        {
+            sum += i;
+            cout << i << " ";
+        }
+        cout << "sum =" << sum << "\n";
+        cin >> N >> M;
+    }
+
+    return 0;
+}
