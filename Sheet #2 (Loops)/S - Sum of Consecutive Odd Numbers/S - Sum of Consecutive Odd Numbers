@@ -1,0 +1,26 @@
+#include <iostream>
+
+using std::cin;
+using std::cout;
+using std::max;
+using std::min;
+
+int main()
+{
+    int T, X, Y;
+    cin >> T;
+    for (int i = 0; i < T; i++)
+    {
+        cin >> X >> Y;
+        int sum = 0;
+        int Min = min(X, Y), Max = max(X, Y);
+        Min % 2 == 0 ? Min += 1 : Min += 2;
+        for (int j = Min; j < Max; j += 2)
+        {
+            sum += j;
+        }
+        cout << sum << "\n";
+    }
+
+    return 0;
+}
