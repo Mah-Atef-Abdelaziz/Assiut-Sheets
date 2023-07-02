@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string>
+
+using std::cin;
+using std::cout;
+using std::string;
+using std::to_string;
+
+int main()
+{
+    int a, b;
+    cin >> a >> b;
+    bool found_lucky = false;
+    for (int i = a; i <= b; i++)
+    {
+        bool is_lucky = true;
+        string s = to_string(i);
+        for (char c : s)
+        {
+            if (c != '4' && c != '7'){
+                is_lucky = false;
+            }
+        }
+        if (is_lucky){
+            cout << i << " ";
+            found_lucky = true;
+        }
+    }
+    if (!found_lucky){
+        cout << -1;
+    }
+    cout << "\n";
+    return 0;
+}
