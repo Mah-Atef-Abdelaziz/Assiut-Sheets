@@ -1,0 +1,26 @@
+#include <iostream>
+
+using std::cin;
+using std::cout;
+
+int main()
+{
+    int N, A, B;
+    long long sum = 0;
+    cin >> N >> A >> B;
+    for (int i = 1; i <= N; i++)
+    {
+        int X = i, sm_d = 0;
+        while (X)
+        {
+            sm_d += X % 10;
+            X /= 10;
+        }
+        if (sm_d >= A && sm_d <= B)
+        {
+            sum += i;
+        }
+    }
+    cout << sum;
+    return 0;
+}
