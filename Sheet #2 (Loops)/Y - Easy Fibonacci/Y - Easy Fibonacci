@@ -1,0 +1,28 @@
+#include <iostream>
+
+using std::cin;
+using std::cout;
+
+int main()
+{
+    int N;
+    cin >> N;
+    int fibn, fib1 = 0, fib2 = 1;
+    if (N >= 1)
+    {
+        cout << fib1 << " ";
+    }
+    if (N >= 2)
+    {
+        cout << fib2 << " ";
+    }
+    for (int i = 2; i < N; i++)
+    {
+        fibn = fib1 + fib2;
+        cout << fibn << " ";
+        fib1 = fib2;
+        fib2 = fibn;
+    }
+
+    return 0;
+}
