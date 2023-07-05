@@ -1,0 +1,27 @@
+#include <iostream>
+#include <algorithm>
+
+using std::cin;
+using std::cout;
+using std::min_element;
+
+int main()
+{
+    int N, K;
+    cin >> N >> K;
+    int arr[N];
+    for (int i = 0; i < N; i++)
+        cin >> arr[i];
+    const int X = N % K;
+    for (int i = 0; i < N - X; i += K)
+    {
+        const int Min = *min_element(arr + i, arr + i + K);
+        cout << Min << " ";
+    }
+    if (X != 0)
+    {
+        const int Min = *min_element(arr + N - X, arr + N);
+        cout << Min << " ";
+    }
+    return 0;
+}
