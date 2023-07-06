@@ -1,0 +1,14 @@
+#include <iostream>
+
+using std::cin;
+using std::cout;
+
+int main()
+{
+    long long id, row, col;
+    cin >> id;
+    row = id / 4;
+    row % 2 == 0 ? col = id % 4 : col = 3 - id % 4;
+    cout << row << " " << col;
+    return 0;
+}
