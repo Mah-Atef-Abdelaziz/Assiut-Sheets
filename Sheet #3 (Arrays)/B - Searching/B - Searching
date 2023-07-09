@@ -1,0 +1,27 @@
+#include <iostream>
+
+using std::cin;
+using std::cout;
+
+int main()
+{
+    int N, A, X;
+    bool not_found = true;
+    cin >> N;
+    int arr[N];
+    for (int i = 0; i < N; i++){
+        cin >> A;
+        arr[i] = A;
+    }
+    cin >> X;
+    for (int i = 0; i < N; i++){
+        if (arr[i] == X){
+            cout << i << " ";
+            not_found = false;
+            break;
+        }
+    }
+    if (not_found)
+        cout << -1;
+    return 0;
+}
