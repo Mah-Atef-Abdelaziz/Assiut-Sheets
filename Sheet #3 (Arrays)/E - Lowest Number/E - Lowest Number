@@ -1,0 +1,24 @@
+#include <iostream>
+
+using std::cin;
+using std::cout;
+
+int main()
+{
+    int N, index=0;
+    cin >> N;
+    int A[N];
+    for (int i = 0; i < N - 1; i++)
+        cin >> A[i];
+    int Min = A[0];
+    for (int i = 0; i < N - 1; i++)
+    {
+        if (A[i] < Min)
+        {
+            Min = A[i];
+            index = i;
+        }
+    }
+    cout << Min << " " << index + 1;
+    return 0;
+}
