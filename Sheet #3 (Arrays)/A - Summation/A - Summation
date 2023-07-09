@@ -1,0 +1,19 @@
+#include <iostream>
+
+using std::cin;
+using std::cout;
+
+int main()
+{
+    long long N, a, sum = 0;
+    cin >> N;
+    long long arr[N];
+    for (int i = 0; i < N; i++)
+    {
+        cin >> a;
+        arr[i] = a;
+        sum += arr[i];
+    }
+    sum >= 0 ? cout << sum : cout << -1 * sum;
+    return 0;
+}
