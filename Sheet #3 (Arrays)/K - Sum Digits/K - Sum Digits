@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+
+using std::cin;
+using std::cout;
+using std::string;
+
+int main()
+{
+    int N;
+    cin >> N;
+
+    string A;
+    cin >> A;
+
+    int sum = 0;
+    for (char digit : A)
+    {
+        sum += digit - '0';
+    }
+    cout << sum << '\n';
+
+    return 0;
+}
