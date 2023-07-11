@@ -1,0 +1,24 @@
+#include <iostream>
+
+using std::cin;
+using std::cout;
+
+int main()
+{
+    int N, counter = 0;
+    cin >> N;
+    int A[N];
+    for (int i = 0; i < N; i++)
+        cin >> A[i];
+        
+    int Min = A[0];
+    for (int i = 1; i < N; i++)
+        if (A[i] < Min)
+            Min = A[i];
+
+    for (int i = 0; i < N; i++)
+        if (A[i] == Min)
+            counter++;
+    counter % 2 != 0 ? cout << "Lucky" : cout << "Unlucky";
+    return 0;
+}
