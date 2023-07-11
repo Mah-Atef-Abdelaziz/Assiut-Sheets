@@ -1,0 +1,27 @@
+#include <iostream>
+
+using std::cin;
+using std::cout;
+
+int main()
+{
+    int T, N;
+    cin >> T;
+    for (int c = 0; c < T; c++)
+    {
+        cin >> N;
+        int A[N];
+        for (int i = 0; i < N; i++)
+            cin >> A[i];
+        int Min = A[0] + A[1] + 2 - 1;
+        for (int i = 0; i < N - 1; i++)
+            for (int j = i + 1; j < N; j++)
+            {
+                int pair = A[i] + A[j] + (j + 1) - (i + 1);
+                if (pair < Min)
+                    Min = pair;
+            }
+        cout << Min << "\n";
+    }
+    return 0;
+}
