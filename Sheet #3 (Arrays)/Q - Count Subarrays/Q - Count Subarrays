@@ -1,0 +1,28 @@
+#include <iostream>
+
+using std::cin;
+using std::cout;
+
+int main()
+{
+    int T;
+    cin >> T;
+    for (int i = 0; i < T; i++){
+        int N, c = 0;
+        cin >> N;
+        int A[N];
+        for (int j = 0; j < N; j++)
+            cin >> A[j];
+        for (int i = 0; i < N; i++){
+            for (int j = i + 1; j < N; j++){
+                if (A[j] >= A[j - 1])
+                    c++;
+                else
+                    break;
+            }
+        }
+        cout << c + N << "\n";
+    }
+
+    return 0;
+}
