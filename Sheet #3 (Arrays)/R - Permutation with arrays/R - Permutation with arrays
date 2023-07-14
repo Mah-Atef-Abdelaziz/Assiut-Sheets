@@ -1,0 +1,35 @@
+#include <iostream>
+using std::cin;
+using std::cout;
+int main()
+{
+    int N;
+    cin >> N;
+    bool flag = false;
+    int A[N];
+    int B[N];
+    for (int i = 0; i < N; i++)
+        cin >> A[i];
+    for (int i = 0; i < N; i++)
+        cin >> B[i];
+    for (int i = 0; i < N; i++){
+        for (int j = 0; j < N; j++){
+            if (A[i] == B[j]){
+                flag = true;
+                B[j] = 0;
+                break;
+            }
+            else
+                flag = false;
+        }
+        if (!flag)
+            break;
+    }
+    for (int j = 0; j < N; j++)
+        if (B[j] != 0){
+            flag = false;
+            break;
+        }
+    flag == true ? cout << "yes" : cout << "no";
+    return 0;
+}
