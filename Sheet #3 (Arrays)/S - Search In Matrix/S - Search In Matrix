@@ -1,0 +1,24 @@
+#include <iostream>
+
+using std::cin;
+using std::cout;
+
+int main()
+{
+    int N, M, X;
+    cin >> N >> M;
+    int A[N][M];
+    for (int i = 0; i < N; i++)
+        for (int j = 0; j < M; j++)
+            cin >> A[i][j];
+    cin >> X;
+    bool found = false;
+    for (int i = 0; i < N; i++)
+        for (int j = 0; j < M; j++)
+            if (A[i][j] == X)
+                found = true;
+    found ? cout << "will not take number"
+          : cout << "will take number";
+
+    return 0;
+}
