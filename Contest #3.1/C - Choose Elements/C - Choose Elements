@@ -1,0 +1,34 @@
+#include <iostream>
+
+using std::cin;
+using std::cout;
+using std::swap;
+
+int main()
+{
+    int N, K, PCounter = 0, Counter = 0;
+    cin >> N >> K;
+    long long A[N];
+    for (int i = 0; i < N; i++){
+        cin >> A[i];
+        if (A[i] > 0)
+            PCounter++;
+    }
+    for (int i = 0; i < N - 1; i++)
+        for (int j = i + 1; j < N; j++)
+            if (A[i] < A[j])
+                swap(A[i], A[j]);
+    if (PCounter < K)
+        K = PCounter;
+    long long Sum = 0;
+    for (int i = 0; i < N; i++){
+        if (Counter == K)
+            break;
+        if (A[i] > 0){
+            Sum += A[i];
+            Counter++;
+        }
+    }
+    cout << Sum;
+    return 0;
+}
