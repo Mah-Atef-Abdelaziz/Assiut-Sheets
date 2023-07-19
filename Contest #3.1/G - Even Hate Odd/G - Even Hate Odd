@@ -1,0 +1,28 @@
+#include <iostream>
+
+using std::cin;
+using std::cout;
+
+int main()
+{
+    int t, n;
+    cin >> t;
+    for (int i = 0; i < t; i++){
+        cin >> n;
+        int A[n];
+        int Even = 0, Odd = 0;
+        for (int j = 0; j < n; j++){
+            cin >> A[j];
+            if (A[j] % 2 == 0)
+                Even++;
+            else
+                Odd++;
+        }
+        if (n % 2 != 0){
+            cout << -1 << "\n";
+            continue;
+        }
+        cout << abs(Even - Odd) / 2 << "\n";
+    }
+    return 0;
+}
