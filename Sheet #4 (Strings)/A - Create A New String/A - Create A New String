@@ -1,0 +1,15 @@
+#include <iostream>
+
+using std::cin;
+using std::cout;
+using std::string;
+
+int main()
+{
+    string S, T;
+    cin >> S >> T;
+    cout << S.length() << " "
+         << T.length() << "\n";
+    cout << S << " " << T;
+    return 0;
+}
