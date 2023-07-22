@@ -1,0 +1,17 @@
+#include <iostream>
+
+using std::cin;
+using std::cout;
+using std::stoi;
+using std::string;
+
+int main()
+{
+    string S;
+    cin >> S;
+    long long Sum = 0;
+    for (int i = 0; i < S.length(); i++)
+        Sum += S[i] - '0';
+    cout << Sum;
+    return 0;
+}
