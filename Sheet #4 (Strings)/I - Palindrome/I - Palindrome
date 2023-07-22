@@ -1,0 +1,20 @@
+#include <iostream>
+#include <algorithm>
+
+using std::cin;
+using std::cout;
+using std::reverse;
+using std::string;
+
+int main()
+{
+    string S;
+    cin >> S;
+    string rev = S;
+    reverse(rev.begin(), rev.end());
+    S == rev
+        ? cout << "YES"
+        : cout << "NO";
+        
+    return 0;
+}
