@@ -1,0 +1,25 @@
+#include <iostream>
+
+using std::cin;
+using std::cout;
+using std::string;
+
+int main()
+{
+    int T;
+    string S;
+    cin >> T;
+    for (int i = 0; i < T; i++)
+    {
+        cin >> S;
+        int length = S.length();
+        if (length <= 10)
+            cout << S << "\n";
+        else
+            cout << S[0]
+                 << length - 2
+                 << S[length - 1]
+                 << "\n";
+    }
+    return 0;
+}
