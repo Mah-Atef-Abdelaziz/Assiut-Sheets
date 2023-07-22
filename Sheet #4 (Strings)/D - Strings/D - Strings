@@ -1,0 +1,18 @@
+#include <iostream>
+
+using std::cin;
+using std::cout;
+using std::string;
+using std::swap;
+
+int main()
+{
+    string A, B;
+    cin >> A >> B;
+    cout << A.length() << " "
+         << B.length() << "\n";
+    cout << A << B << "\n";
+    swap(A[0], B[0]);
+    cout << A << " " << B;
+    return 0;
+}
