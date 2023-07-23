@@ -1,0 +1,51 @@
+#include <iostream>
+#include <algorithm>
+#include <string>
+using namespace std;
+
+int main()
+{
+    int n, Q;
+    cin >> n >> Q;
+    string S;
+    cin >> S;
+    while (Q--)
+    {
+        string query;
+        cin >> query;
+        int left, right;
+        if (query == "pop_back")
+            S.pop_back();
+        else if (query == "front")
+            cout << S.front() << endl;
+        else if (query == "back")
+            cout << S.back() << endl;
+        else if (query == "sort"){
+            cin >> left >> right;
+            // sort(str.begin() + min(left, right) - 1, str.begin() + max(left, right));
+            sort(&S[min(left, right) - 1], &S[max(left, right)]);
+        }
+        else if (query == "reverse"){
+            cin >> left >> right;
+            // reverse(str.begin() + min(left, right) - 1, str.begin() + max(left, right));
+            reverse(&S[min(left, right) - 1], &S[max(left, right)]);
+        }
+        else if (query == "print"){
+            int pos;
+            cin >> pos;
+            cout << S[pos - 1] << endl;
+        }
+        else if (query == "substr"){
+            cin >> left >> right;
+            for (int i = min(left, right) - 1; i < max(left, right); i++)
+                cout << S[i];
+            cout << endl;
+        }
+        else if (query == "push_back"){
+            char x;
+            cin >> x;
+            S.push_back(x);
+        }
+    }
+    return 0;
+}
