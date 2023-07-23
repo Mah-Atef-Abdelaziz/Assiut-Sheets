@@ -1,0 +1,33 @@
+#include <iostream>
+
+using std::cin;
+using std::cout;
+using std::max;
+using std::min;
+using std::string;
+
+int main()
+{
+    int N;
+    cin >> N;
+    string S, T;
+    for (int i = 0; i < N; i++)
+    {
+        cin >> S >> T;
+        int SL = S.length();
+        int TL = T.length();
+        int Min = min(SL, TL);
+        int Max = max(SL, TL);
+        for (int j = 0; j < Min; j++)
+            cout << S[j] << T[j];
+        if (SL > TL)
+            for (int j = Min; j < Max; j++)
+                cout << S[j];
+        else
+            for (int j = Min; j < Max; j++)
+                cout << T[j];
+        cout << "\n";
+    }
+
+    return 0;
+}
