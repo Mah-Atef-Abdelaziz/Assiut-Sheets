@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    string url;
+    getline(cin, url);
+    size_t start = url.find("username=") + 9;
+    size_t end = url.find("&", start);
+    string username = url.substr(start, end - start);
+
+    start = url.find("pwd=") + 4;
+    end = url.find("&", start);
+    string pwd = url.substr(start, end - start);
+
+    start = url.find("profile=") + 8;
+    end = url.find("&", start);
+    string profile = url.substr(start, end - start);
+
+    start = url.find("role=") + 5;
+    end = url.find("&", start);
+    string role = url.substr(start, end - start);
+
+    start = url.find("key=") + 4;
+    string key = url.substr(start);
+    cout << "username: " << username << "\n";
+    cout << "pwd: " << pwd << "\n";
+    cout << "profile: " << profile << "\n";
+    cout << "role: " << role << "\n";
+    cout << "key: " << key << "\n";
+    return 0;
+}
