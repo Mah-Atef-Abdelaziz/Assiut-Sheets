@@ -1,0 +1,21 @@
+#include <iostream>
+#include <string>
+
+using std::cin;
+using std::cout;
+using std::string;
+
+int main()
+{
+    string S;
+    cin >> S;
+
+    size_t index = S.find("EGYPT");
+    while (index != string::npos)
+    {
+        S.replace(index, 5, " ");
+        index = S.find("EGYPT", index + 1);
+    }
+    cout << S;
+    return 0;
+}
