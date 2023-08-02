@@ -1,0 +1,27 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+    string s;
+    cin >> s;
+    int n = s.size();
+
+    string smallest = s;
+
+    // Try all possible splits
+    for (int i = 1; i < n; i++)
+    {
+        string left = s.substr(0, i);
+        string right = s.substr(i);
+        sort(left.begin(), left.end());
+        sort(right.begin(), right.end());
+        string candidate = left + right;
+        if (candidate < smallest)
+            smallest = candidate;
+    }
+
+    cout << smallest << endl;
+    return 0;
+}
