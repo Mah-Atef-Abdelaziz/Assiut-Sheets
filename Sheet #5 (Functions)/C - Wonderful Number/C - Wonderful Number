@@ -1,0 +1,34 @@
+#include <iostream>
+#include <bitset>
+#include <string>
+
+using namespace std;
+
+// Function to check if a string is palindrome
+bool is_palindrome(const string &str)
+{
+    int len = str.length();
+    for (int i = 0; i < len / 2; i++)
+        if (str[i] != str[len - 1 - i])
+            return false;
+    return true;
+}
+// Function to check if a number is wonderful
+bool is_wonderful(int n)
+{
+    // Check if n is odd
+    if (n % 2 == 0)
+        return false;
+    // Convert n to binary string
+    bitset<32> binary(n);
+    string binary_str = binary.to_string().substr(binary.to_string().find('1'));
+    // Check if binary string is palindrome
+    return is_palindrome(binary_str);
+}
+int main()
+{
+    int n;
+    cin >> n;
+    (is_wonderful(n)) ? cout << "YES\n" : cout << "NO\n";
+    return 0;
+}
