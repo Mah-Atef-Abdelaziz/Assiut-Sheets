@@ -1,0 +1,20 @@
+#include <iostream>
+#include <cmath>
+
+using std::cin;
+using std::cout;
+
+void Equation(int X, int Y)
+{
+    long long result = 0;
+    for (int i = 2; i <= Y; i += 2)
+        result += pow(X, i);
+    cout << result;
+}
+int main()
+{
+    int X, Y;
+    cin >> X >> Y;
+    Equation(X, Y);
+    return 0;
+}
