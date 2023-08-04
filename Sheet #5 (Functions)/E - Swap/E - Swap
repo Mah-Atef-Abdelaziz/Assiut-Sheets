@@ -1,0 +1,18 @@
+#include <iostream>
+
+using std::cin;
+using std::cout;
+using std::swap;
+
+void Swap(int &X, int &Y)
+{
+    swap(X, Y);
+}
+int main()
+{
+    int X, Y;
+    cin >> X >> Y;
+    Swap(X, Y);
+    cout << X << " " << Y;
+    return 0;
+}
