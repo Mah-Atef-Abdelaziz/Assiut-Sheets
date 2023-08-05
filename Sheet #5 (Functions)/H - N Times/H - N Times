@@ -1,0 +1,24 @@
+#include <iostream>
+
+using std::cin;
+using std::cout;
+
+void N_Times(int N, char C)
+{
+    for (int i = 0; i < N; i++)
+        cout << C << " ";
+    cout << "\n";
+}
+
+int main()
+{
+    int T, N;
+    cin >> T;
+    char C; 
+    while (T--)
+    {
+        cin >> N >> C;
+        N_Times(N, C);
+    }
+    return 0;
+}
