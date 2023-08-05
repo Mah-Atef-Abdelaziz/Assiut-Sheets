@@ -1,0 +1,41 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+void swap_numbers(int &num1, int &num2)
+{
+    int temp = num1;
+    num1 = num2;
+    num2 = temp;
+}
+void swap_arr(vector<int> &arr1, vector<int> &arr2)
+{
+    vector<int> temp = arr1;
+    arr1 = arr2;
+    arr2 = temp;
+}
+int main()
+{
+    int N, X, Y;
+    cin >> N >> X >> Y;
+    X--, Y--;
+    vector<vector<int>> arr(N, vector<int>(N));
+    for (int i = 0; i < N; i++)
+        for (int j = 0; j < N; j++)
+            cin >> arr[i][j];
+    // To swap row
+    for (int i = 0; i < N; i++)
+        swap_numbers(arr[i][X], arr[i][Y]);
+    // To swap columns
+    swap_arr(arr[X], arr[Y]);
+    for (int i = 0; i < N; i++)
+    {
+        for (int j = 0; j < N; j++)
+        {
+            if (j != 0)
+                cout << " ";
+            cout << arr[i][j];
+        }
+        cout << "\n";
+    }
+    return 0;
+}
