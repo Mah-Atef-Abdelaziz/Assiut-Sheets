@@ -1,0 +1,33 @@
+#include <iostream>
+
+using namespace std;
+
+void Concate(int A[], int B[], int C[], int N)
+{
+    for (int i = 0; i < N; i++)
+        C[i] = B[i];
+    for (int i = 0; i < N; i++)
+        C[N + i] = A[i];
+}
+
+int main()
+{
+    int N;
+    cin >> N;
+    int A[N], B[N], C[2 * N];
+
+    for (int i = 0; i < N; i++)
+        cin >> A[i];
+    for (int i = 0; i < N; i++)
+        cin >> B[i];
+    Concate(A, B, C, N);
+
+    for (int i = 0; i < 2 * N; i++)
+    {
+        cout << C[i];
+        if (i != 2 * N - 1)
+            cout << " ";
+    }
+
+    return 0;
+}
