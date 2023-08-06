@@ -1,0 +1,28 @@
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+void rightShift(int arr[], int n, int shift)
+{
+    // Ensure shift value is within array size
+    shift = shift % n;
+    // Reverse the entire array
+    reverse(arr, arr + n);
+    // Reverse the first 'shift' elements
+    reverse(arr, arr + shift);
+    // Reverse the remaining elements
+    reverse(arr + shift, arr + n);
+}
+int main()
+{
+    int N, X;
+    cin >> N >> X;
+    int arr[N];
+    for (int i = 0; i < N; i++)
+        cin >> arr[i];
+    rightShift(arr, N, X);
+    for (int i = 0; i < N; i++)
+        cout << arr[i] << " ";
+    return 0;
+}
