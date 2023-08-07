@@ -1,0 +1,24 @@
+#include <iostream>
+#include <unordered_set>
+
+using namespace std;
+
+int countDistinctNumbers(int arr[], int N)
+{
+    unordered_set<int> distinctNumbers;
+    for (int i = 0; i < N; ++i)
+        distinctNumbers.insert(arr[i]);
+    return distinctNumbers.size();
+}
+
+int main()
+{
+    int N;
+    cin >> N;
+    int A[N];
+    for (int i = 0; i < N; ++i)
+        cin >> A[i];
+    int distinctCount = countDistinctNumbers(A, N);
+    cout << distinctCount << "\n";
+    return 0;
+}
