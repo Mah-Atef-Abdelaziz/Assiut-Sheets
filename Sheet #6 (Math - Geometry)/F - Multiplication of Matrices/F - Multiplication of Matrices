@@ -1,0 +1,77 @@
+#include <iostream>
+
+using namespace std;
+
+int **allocateMatrix(int rows, int cols)
+{
+    int **matrix = new int *[rows];
+    for (int i = 0; i < rows; i++)
+        matrix[i] = new int[cols];
+    return matrix;
+}
+void deallocateMatrix(int **matrix, int rows)
+{
+    for (int i = 0; i < rows; i++)
+        delete[] matrix[i];
+    delete[] matrix;
+}
+void readMatrix(int **matrix, int rows, int cols)
+{
+    for (int i = 0; i < rows; i++)
+        for (int j = 0; j < cols; j++)
+            cin >> matrix[i][j];
+}
+int **multiplyMatrices(int **A, int RA, int CA, int **B, int RB, int CB)
+{
+    if (CA != RB)
+    {
+        cout << "Invalid matrix dimensions for multiplication!\n";
+        return nullptr;
+    }
+    int **result = allocateMatrix(RA, CB);
+    for (int i = 0; i < RA; i++)
+        for (int j = 0; j < CB; j++)
+        {
+            result[i][j] = 0;
+            for (int k = 0; k < CA; k++)
+                result[i][j] += A[i][k] * B[k][j];
+        }
+    return result;
+}
+void printMatrix(int **matrix, int rows, int cols)
+{
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < cols; j++)
+            cout << matrix[i][j] << " ";
+        cout << "\n";
+    }
+}
+
+int main()
+{
+    int RA, CA;
+    cin >> RA >> CA;
+
+    int **A = allocateMatrix(RA, CA);
+    readMatrix(A, RA, CA);
+
+    int RB, CB;
+    cin >> RB >> CB;
+
+    int **B = allocateMatrix(RB, CB);
+    readMatrix(B, RB, CB);
+
+    int **result = multiplyMatrices(A, RA, CA, B, RB, CB);
+
+    if (result != nullptr)
+    {
+        printMatrix(result, RA, CB);
+        deallocateMatrix(result, RA);
+    }
+
+    deallocateMatrix(A, RA);
+    deallocateMatrix(B, RB);
+
+    return 0;
+}
