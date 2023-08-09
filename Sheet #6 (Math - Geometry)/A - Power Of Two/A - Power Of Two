@@ -1,0 +1,20 @@
+#include <iostream>
+
+using namespace std;
+
+bool isPowerOfTwo(long long N)
+{
+    /* A number is a power of 2
+    if and only if it has only one bit set
+    in its binary representation.*/
+    return (N > 0) && ((N & (N - 1)) == 0);
+}
+
+int main()
+{
+    long long N;
+    cin >> N;
+    isPowerOfTwo(N) ? cout << "YES\n"
+                    : cout << "NO\n";
+    return 0;
+}
