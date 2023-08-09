@@ -1,0 +1,35 @@
+#include <iostream>
+
+using namespace std;
+#define ll long long
+ll sum_odd(ll num)
+{
+    ll result = (num + 1) / 2;
+    return result * result;
+}
+ll sum_even(ll num)
+{
+    num /= 2;
+    ll result = num * (num + 1);
+    return result;
+}
+ll sum(ll num)
+{
+    ll result = (num * (num + 1)) / 2;
+    return result;
+}
+int main()
+{
+    ll A, B;
+    cin >> A >> B;
+    ll Max = max(A, B);
+    ll Min = min(A, B);
+    ll sum_all = sum(Max) - sum(Min - 1);
+    ll odd_sum = sum_odd(Max) - sum_odd(Min - 1);
+    ll even_sum = sum_even(Max) - sum_even(Min - 1);
+
+    cout << sum_all << "\n";
+    cout << even_sum << "\n";
+    cout << odd_sum << "\n";
+    return 0;
+}
