@@ -1,0 +1,32 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+#define ll long long
+
+ll GCD(ll A, ll B)
+{
+    ll temp;
+    while (B != 0)
+    {
+        temp = A;
+        A = B;
+        B = temp % A;
+    }
+    return A;
+}
+
+int main()
+{
+    ll A, B;
+    cin >> A >> B;
+    ll Max = max(A, B);
+    ll Min = min(A, B);
+
+    ll gcd = GCD(Min, Max);
+    ll LCM = (Min / gcd) * Max;
+
+    cout << gcd << " " << LCM;
+    return 0;
+}
