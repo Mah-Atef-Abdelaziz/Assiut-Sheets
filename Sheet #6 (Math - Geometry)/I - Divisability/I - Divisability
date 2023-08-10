@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+#define ll long long
+
+ll sum(ll num)
+{
+    return num * (num + 1) / 2;
+}
+int main()
+{
+    ll A, B, X;
+    cin >> A >> B >> X;
+
+    ll max_ = max(A, B);
+    ll min_ = min(A, B);
+    ll Sum_Max = (sum(max_ / X) * X);
+    ll Sum_Min = (sum((min_ - 1) / X) * X);
+    ll result = Sum_Max - Sum_Min;
+
+    cout << result << "\n";
+    return 0;
+}
