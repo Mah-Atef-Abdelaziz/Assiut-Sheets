@@ -1,0 +1,54 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+void printPrimeFactors(long long num)
+{
+    bool start = true;
+    // Check for divisibility by 2
+    int counter = 0;
+    while (num % 2 == 0)
+    {
+        counter++;
+        num /= 2;
+    }
+    if (counter > 0)
+    {
+        cout << "(" << 2 << "^" << counter << ")";
+        start = false;
+    }
+    // Check for divisibility by other odd numbers
+    for (int i = 3; i <= sqrt(num); i += 2)
+    {
+        counter = 0;
+        while (num % i == 0)
+        {
+            counter++;
+            num /= i;
+        }
+        if (counter > 0)
+        {
+            if (!start)
+                cout << "*";
+            cout << "(" << i << "^" << counter << ")";
+            start = false;
+        }
+    }
+    // If num is a prime number greater than
+    //  the square root of the original number
+    if (num > 2)
+    {
+        if (!start)
+            cout << "*";
+        cout << "(" << num << "^" << 1 << ")";
+    }
+}
+
+int main()
+{
+    long long num;
+    cin >> num;
+    printPrimeFactors(num);
+    return 0;
+}
