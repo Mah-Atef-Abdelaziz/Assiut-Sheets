@@ -1,0 +1,24 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+#define ll long long
+
+ll fact_digit_log(ll num)
+{
+    double digits = 0;
+    for (int i = 2; i <= num; i++)
+        digits += log10(i);
+    return digits + 1;
+}
+
+int main()
+{
+    ll num;
+    cin >> num;
+    cout << "Number of digits of "
+         << num << "! is "
+         << fact_digit_log(num);
+    return 0;
+}
