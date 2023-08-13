@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+#define ll long long
+
+ll calculateProduct(ll left, ll right, ll mod)
+{
+    ll product = 1;
+    for (ll i = left; i <= right; i++)
+        product = (product * i) % mod;
+    return product;
+}
+
+int main()
+{
+    ll  L, R, M;
+    cin >> L >> R >> M;
+
+    ll result = calculateProduct(L, R, M);
+    cout << result << "\n";
+
+    return 0;
+}
