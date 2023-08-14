@@ -1,0 +1,21 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    long long X1, Y1, X2, Y2;
+    long long X3, Y3, X4, Y4;
+
+    cin >> X1 >> Y1 >> X2 >> Y2;
+    cin >> X3 >> Y3 >> X4 >> Y4;
+
+    double cond1 = (X2 - X1) * (Y4 - Y3);
+    double cond2 = (Y2 - Y1) * (X4 - X3);
+
+    if (cond1 == cond2)
+        cout << "YES";
+    else
+        cout << "NO";
+    return 0;
+}
