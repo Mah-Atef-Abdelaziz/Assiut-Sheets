@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+#define ll long long
+
+double calc_distance(ll x1, ll y1, ll x2, ll y2)
+{
+    ll pow_sub_x = pow(x2 - x1, 2);
+    ll pow_sub_y = pow(y2 - y1, 2);
+    double distance = sqrt(pow_sub_x + pow_sub_y);
+    return distance;
+}
+
+int main()
+{
+    ll x, y, radius, times;
+    cin >> x >> y >> radius >> times;
+    while (times--)
+    {
+        ll x2, y2;
+        cin >> x2 >> y2;
+        double distance = calc_distance(x, y, x2, y2);
+        if (distance <= radius)
+            cout << "YES\n";
+        else
+            cout << "NO\n";
+    }
+    return 0;
+}
