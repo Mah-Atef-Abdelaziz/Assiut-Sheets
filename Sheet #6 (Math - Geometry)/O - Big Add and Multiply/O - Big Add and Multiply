@@ -1,0 +1,88 @@
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <vector>
+
+using namespace std;
+
+class BigInteger
+{
+private:
+    vector<int> digits;
+
+public:
+    BigInteger() {}
+
+    BigInteger(const string &number)
+    {
+        for (int i = number.length() - 1; i >= 0; i--)
+            digits.push_back(number[i] - '0');
+    }
+
+    void add(const BigInteger &other)
+    {
+        int carry = 0;
+        for (int i = 0; i < max(digits.size(), other.digits.size()) || carry; i++)
+        {
+            if (i == digits.size())
+                digits.push_back(0);
+            int currentDigit = digits[i];
+            int otherDigit = (i < other.digits.size()) ? other.digits[i] : 0;
+            digits[i] += carry + otherDigit;
+            carry = digits[i] >= 10;
+            if (carry)
+                digits[i] -= 10;
+        }
+    }
+
+    void multiply(const BigInteger &other)
+    {
+        vector<int> result(digits.size() + other.digits.size(), 0);
+        for (int i = 0; i < digits.size(); i++)
+        {
+            int carry = 0;
+            for (int j = 0; j < other.digits.size() || carry; j++)
+            {
+                int currentDigit = digits[i];
+                int otherDigit = (j < other.digits.size()) ? other.digits[j] : 0;
+                long long digitProduct = currentDigit * otherDigit;
+                long long product = result[i + j] + digitProduct + carry;
+                result[i + j] = product % 10;
+                carry = product / 10;
+            }
+        }
+        digits = result;
+    }
+
+    string toString() const
+    {
+        stringstream ss;
+        bool leadingZeros = true;
+        for (int i = digits.size() - 1; i >= 0; i--)
+        {
+            if (leadingZeros && digits[i] == 0)
+                continue;
+            leadingZeros = false;
+            ss << digits[i];
+        }
+        return ss.str();
+    }
+};
+
+int main()
+{
+    string num;
+    cin >> num;
+
+    BigInteger bigInteger1(num);
+    BigInteger bigInteger2("9999");
+
+    bigInteger1.add(bigInteger2);
+    cout << bigInteger1.toString() << "\n";
+
+    bigInteger1 = BigInteger(num);
+    bigInteger1.multiply(bigInteger2);
+    cout << bigInteger1.toString() << "\n";
+
+    return 0;
+}
